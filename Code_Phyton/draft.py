@@ -1,2 +1,1 @@
-import mod
-print(mod)
+import sys, os
