@@ -9,4 +9,3 @@ for i in range(len(number)):
     #return True
 #else:
     #return False    
-
