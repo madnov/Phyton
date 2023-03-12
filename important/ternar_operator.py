@@ -8,7 +8,4 @@ for i  in range(len(word)):
    
 
 result = ''.join(result)
-print(result)            
-
-
-
+print(result) 
