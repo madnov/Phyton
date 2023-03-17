@@ -41,25 +41,11 @@ def save_info(message):
         f.write(result + '\n')
 
 def change_directory(name):
-    result = os.chdir(name)
+    os.chdir(name)
+    print(os.getcwd())
 
 def change_dir_name(name, new_name):
-    result = os.rename(name, new_name)
-
-def mini_game():
-    comp_number = random.randint(1, 101)
-    user_number = int(input('Угадайте число от 1 до 100: '))
-    count = 1
-    while user_number != comp_number:
-        if comp_number > user_number:
-            count += 1
-            print('Загаданное число больше, попробуйте ещё раз.')
-            user_number = int(input('Угадайте число от 1 до 100: '))
-        elif comp_number < user_number:
-            count += 1
-            print('Загадонное число меньше, попробуйте ещё раз.')
-            user_number = int(input('Угадайте число от 1 до 100: ')) 
-    print(f"Поздравляем вы угадали c {count} попытки, загаданное число: {comp_number} ")
+    os.rename(name, new_name)
 
 if __name__ == '__main__':  
     change_directory()
