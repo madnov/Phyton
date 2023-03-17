@@ -1,6 +1,7 @@
 import os
 import shutil
 import datetime
+import random
 
 def create_file(name, text=None):
     with open(name, 'w', encoding='utf=8') as f:
@@ -39,12 +40,27 @@ def save_info(message):
     with open('log.txt', 'a', encoding='utf=8') as f:
         f.write(result + '\n')
 
-if __name__ == '__main__':
-    create_file('text.dat')
-    create_file('text.dat', 'some text')
-    create_folder('new_f')
-    get_list()
-    get_list(True)
-    delete_file('new_f')
-    copy_file('new_f', 'new_file')
-    save_info('adc')
+def change_directory(name):
+    result = os.chdir(name)
+
+def change_dir_name(name, new_name):
+    result = os.rename(name, new_name)
+
+def mini_game():
+    comp_number = random.randint(1, 101)
+    user_number = int(input('Угадайте число от 1 до 100: '))
+    count = 1
+    while user_number != comp_number:
+        if comp_number > user_number:
+            count += 1
+            print('Загаданное число больше, попробуйте ещё раз.')
+            user_number = int(input('Угадайте число от 1 до 100: '))
+        elif comp_number < user_number:
+            count += 1
+            print('Загадонное число меньше, попробуйте ещё раз.')
+            user_number = int(input('Угадайте число от 1 до 100: ')) 
+    print(f"Поздравляем вы угадали c {count} попытки, загаданное число: {comp_number} ")
+
+if __name__ == '__main__':  
+    change_directory()
+   
