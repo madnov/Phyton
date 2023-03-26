@@ -1,7 +1,7 @@
 import sys
 from core import create_file, create_folder, get_list, delete_file, copy_file, save_info, change_dir_name, change_directory
 from mini_game import mini_game
-#save_info('Старт')
+# save_info('Старт')
 
 try:
     command = sys.argv[1]
@@ -10,7 +10,7 @@ except IndexError:
     print('create_file - создание файла')
     print('create_folder - создание папки')
     print('delete - удаление файла или папки')
-    print('copy - копирование файла или папки')    
+    print('copy - копирование файла или папки')
     print('change_name - поменять название папки')
     print('change_dir - сменить директорию')
     print('game - поиграть в мини игру')
@@ -20,11 +20,11 @@ else:
         get_list()
     elif command == 'create_file':
         try:
-            name = sys.argv[2]    
+            name = sys.argv[2]
         except IndexError:
             print('Отсутсвует название файла.')
         else:
-            create_file(name)       
+            create_file(name)
     elif command == 'create_folder':
         try:
             name = sys.argv[2]
@@ -55,7 +55,7 @@ else:
         except IndexError:
             print('Необходимо ввести старое и новое название файла.')
         else:
-            change_dir_name(name, new_name)    
+            change_dir_name(name, new_name)
 
     elif command == 'change_dir':
         try:
@@ -63,7 +63,7 @@ else:
         except IndexError:
             print('Отсутствует название файла.')
         else:
-            change_directory(name)        
+            change_directory(name)
 
     elif command == 'game':
         result = mini_game()
@@ -73,10 +73,9 @@ else:
         print('create_file - создание файла')
         print('create_folder - создание папки')
         print('delete - удаление файла или папки')
-        print('copy - копирование файла или папки')    
+        print('copy - копирование файла или папки')
         print('change_name - поменять название папки')
         print('change_dir - сменить директорию')
-        print('game - поиграть в мини игру ')    
+        print('game - поиграть в мини игру ')
 
-#save_info('Конец')    
-         
+# save_info('Конец')
