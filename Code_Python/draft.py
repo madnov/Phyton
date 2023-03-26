@@ -1,26 +1,21 @@
-import os
-def create_file(name, text=None):
-    with open(name, 'w', encoding='utf=8') as f:
-        if text:
-            f.write(text)
+import sys
 
-def create_folder(name):
-    try:
-        os.mkdir(name)            
-    except FileExistsError:
-        print('Такая папка уже есть')
-
-def get_list(folders_only=False):
-    result = os.listdir()
-    if folders_only:
-        result = [f for f in result if os.path.isdir(f)]
-    print(result)        
+command = sys.argv[1]
 
 
+def path(way: str) -> int:
+    if command == 'way':
+        total = count = 0
+        for x in way:
+            if x == 'u':
+                total += 1
+            elif x == 'd':
+                total -= 1
+            if total == 0:
+                count += 1
+        return count
+print(path())
 
-
-if __name__ == '__main__':
-    create_file('text.dat')
-    create_file('text.dat', 'some text')
-    create_folder('new_f')
-    get_list()
+if command == "way":
+    way = sys.argv[2]
+    path(way)
