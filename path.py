@@ -18,3 +18,4 @@ if command == "way":
     way = sys.argv[2]
     path(way)
     print(path(way))
+

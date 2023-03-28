@@ -1,21 +1,17 @@
-import sys
+from flask import Flask
 
-command = sys.argv[1]
+app = Flask(__name__)
 
 
-def path(way: str) -> int:
-    if command == 'way':
-        total = count = 0
-        for x in way:
-            if x == 'u':
-                total += 1
-            elif x == 'd':
-                total -= 1
-            if total == 0:
-                count += 1
-        return count
-print(path())
+@app.route('/')
+def main():
+    return "<h1>Hello, World</h1><br><a href='/index'>перейти на вторую страницу</a>"
 
-if command == "way":
-    way = sys.argv[2]
-    path(way)
+
+@app.route('/index/<x>/<y>')
+def index(x, y):
+    return f"Результат {int(x) + int(y)}"
+
+
+if __name__ == '__main__':
+    app.run()
